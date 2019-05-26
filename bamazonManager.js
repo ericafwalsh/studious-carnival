@@ -21,7 +21,7 @@ function afterConnection() {
     inquirer.prompt([
         {
             type: "list",
-            message: "Which option would you like?",
+            message: "Hi Manager. Which option would you like?",
             choices: ["View Products for Sale", "View Low Inventory", "Add to Inventory", "Add New Product"],
             name: "managerList"
         }

@@ -70,10 +70,33 @@ function afterConnection() {
 
                         // Show the total price of the customer's purchase
                         connection.query("SELECT price FROM products WHERE ?", { item_id: requestedItem }, function (err, priceResult) {
+
                             if (err) throw err;
                             totalCustomerPrice = parseFloat(priceResult[0].price * requestedQuantity).toFixed(2);
                             console.log("Your total is $" + totalCustomerPrice);
-                            connection.end();
+
+                            // Grab the current product sales of the item that was purchased
+                            connection.query("SELECT product_sales FROM products WHERE ?", { item_id: requestedItem }, function (err, requestedProductSales) {
+
+                                currentSales = requestedProductSales[0].product_sales;
+
+                                // Update the product sales to include the sale
+                                connection.query("UPDATE products SET ? WHERE ?",
+                                    [
+                                        {
+                                            product_sales: currentSales + totalCustomerPrice
+
+                                        },
+                                        {
+                                            item_id: requestedItem
+                                        }
+                                    ],
+                                    function (err, res) {
+                                        if (err) throw err;
+                                        connection.end();
+                                    });
+                            })
+
                         });
                     }
 
