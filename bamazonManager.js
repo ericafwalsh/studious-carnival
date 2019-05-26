@@ -78,7 +78,7 @@ function afterConnection() {
                             connection.query("UPDATE products SET ? WHERE ?",
                                 [
                                     {
-                                        stock_quantity: result[0].stock_quantity + selectedUnits
+                                        stock_quantity: parseFloat(result[0].stock_quantity) + parseFloat(selectedUnits)
 
                                     },
                                     {

@@ -84,7 +84,7 @@ function afterConnection() {
                                 connection.query("UPDATE products SET ? WHERE ?",
                                     [
                                         {
-                                            product_sales: currentSales + totalCustomerPrice
+                                            product_sales: parseFloat(currentSales) + parseFloat(totalCustomerPrice)
 
                                         },
                                         {
