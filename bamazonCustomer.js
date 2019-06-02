@@ -18,7 +18,7 @@ connection.connect(function (err) {
 function afterConnection() {
 
     // Show the customer all available products and their information
-    connection.query("SELECT * FROM products", function (err, res) {
+    connection.query("SELECT item_id, product_name, department_name, price FROM products", function (err, res) {
         if (err) throw err;
         console.log(res);
 
