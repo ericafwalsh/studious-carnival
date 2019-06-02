@@ -8,7 +8,7 @@ Bamazon is a CLI tool that has 3 different modes with different abilities. The m
 To use, in your terminal window, simply type "node bamazon[Customer/Manager/Supervisor].js"
 
 ## Demo
-To see a demo of all of bamazon's abilities, please view this clip:
+To see a demo of all of bamazon's abilities, please view this clip: https://drive.google.com/file/d/1GuSduCxoJpFPn-QxaZfu6m-8fXiM4NQw/view?usp=sharing
 
 ## Usage
 In order to use bamazon on your machine, you will need a few Node packages. 
@@ -17,7 +17,7 @@ Node packages needed:
  - mySQL
  - Inquirer
  - easy-table
- 
+
 ## Contributing
 Please let me know of any feedback you have. 
 
